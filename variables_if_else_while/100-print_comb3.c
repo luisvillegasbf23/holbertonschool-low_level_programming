@@ -9,19 +9,19 @@ int main(void)
 {
 	int a, b;
 
-	for (a = 0; a <= 9; a++)
+	for (a = 48; a <= 57; a++)
 	{
-		for (b = a + 1; b <= 9; b++)
+		for (b = a + 1; b <= 57; b++)
 		{
-			putchar((a % 10) + '0');
-			putchar((b % 10) + '0');
-			if (a != 8)
+			putchar(a);
+			putchar(b);
+			if (a != 56)
 			{
-				putchar(',');
-				putchar(' ');
+				putchar(44);
+				putchar(32);
 			}
 		}
 	}
-	putchar('\n');
+	putchar(10);
 	return (0);
 }
