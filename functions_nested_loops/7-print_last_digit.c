@@ -4,15 +4,15 @@
  * @l: The caracter to print
  * Return: x
  */
-int print_last_digit(long int l)
+int print_last_digit(int n)
 {
-	/* l = last number */
+	int l = n % 10;	/* l = last number */
 	/* when you use % 10 you will get the last digit */
 	if (l < 0)
 	{
 		l = l * -1;
 	}
-	_putchar((l % 10) + 48);
-	return (l % 10);
+	_putchar(l + 48);
+	return (l);
 }
 
