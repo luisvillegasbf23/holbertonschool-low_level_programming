@@ -4,7 +4,7 @@
  * @n: The caracter to print
  * Return: x
  */
-int print_last_digit(int l)
+int print_last_digit(long int l)
 {
 	/* l = last number */
 	/* when you use % 10 you will get the last digit */
