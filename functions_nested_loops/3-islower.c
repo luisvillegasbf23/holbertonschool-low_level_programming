@@ -7,11 +7,9 @@
  */
 int _islower(int c)
 {
-	char i;
 
-	if (islower(i))
-		_putchar(48);
+	if (islower(c))
+		return (1);
 	else
-		_putchar(49);
-	return (c);
+		return (0);
 }
