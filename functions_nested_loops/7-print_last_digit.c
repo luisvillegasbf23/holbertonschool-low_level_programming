@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * print_the_last_digit - This function print the last digit of a number
- * @n: The caracter to print
+ * print_last_digit - This function print the last digit of a number
+ * @l: The caracter to print
  * Return: x
  */
 int print_last_digit(long int l)
@@ -13,6 +13,6 @@ int print_last_digit(long int l)
 		l = l * -1;
 	}
 	_putchar((l % 10) + 48);
-	return(l % 10);
+	return (l % 10);
 }
 
