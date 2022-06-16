@@ -4,23 +4,23 @@
  * @s: Pointer
  * Return: Always 0
  */
-char *cap_string(char *s)
+char *cap_string(char *a)
 {
 	int i = 0;
 
-	if (s[i] > 96 && s[i] < 123)
-		s[i] = s[i] - 32;
+	if (a[i] > 96 && a[i] < 123)
+		a[i] = a[i] - 32;
 
-	for (; s[i]; i++)
+	for (; a[i]; i++)
 	{
-		if (s[i] == 9 || s[i] == 10 || s[i] == 32 || s[i] == 44
-				|| s[i] == 59 || s[i] == 46 || s[i] == 40
-				|| s[i] == 41 || s[i] == 34 || s[i] == 63
-				|| s[i] == 33 || s[i] == 123 || s[i] == 125)
+		if (a[i] == 9 || a[i] == 10 || a[i] == 32 || a[i] == 44
+				|| a[i] == 59 || a[i] == 46 || a[i] == 40
+				|| a[i] == 41 || a[i] == 34 || a[i] == 63
+				|| a[i] == 33 || a[i] == 123 || a[i] == 125)
 		{
-				if (s[i + 1] > 96 && s[i + 1] < 123)
-					s[i + 1] = s[i + 1] - 32;
+			if (a[i + 1] > 96 && a[i + 1] < 123)
+				a[i + 1] = a[i + 1] - 32;
 		}
 	}
-	return (s);
+	return (a);
 }
