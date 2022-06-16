@@ -8,6 +8,9 @@ char *cap_string(char *s)
 {
 	int i = 0;
 
+	if (s[i] > 96 && s[i] < 123)
+		s[i] = s[i] - 32;
+
 	for (; s[i]; i++)
 	{
 		if (s[i] == 9 || s[i] == 10 || s[i] == 32 || s[i] == 44
