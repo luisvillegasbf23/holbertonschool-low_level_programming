@@ -1,15 +1,12 @@
 #include "main.h"
 /**
  * *cap_string - Write a function that capitalizes all words of a string.
- * @s: Pointer
+ * @a: Pointer
  * Return: Always 0
  */
 char *cap_string(char *a)
 {
 	int i = 0;
-
-	if (a[i] > 96 && a[i] < 123)
-		a[i] = a[i] - 32;
 
 	for (; a[i]; i++)
 	{
