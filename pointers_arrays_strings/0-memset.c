@@ -1,7 +1,7 @@
 #include "main.h"
 #include <string.h>
 /**
- * *_menset - Write a function that fills memory with a constant byte.
+ * *_memset - Write a function that fills memory with a constant byte.
  * @s: pointer
  * @b: character
  * @n: bytes number
