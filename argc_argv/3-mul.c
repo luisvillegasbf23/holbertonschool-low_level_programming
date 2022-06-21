@@ -12,7 +12,6 @@ int main(int argc, char *argv[])
 {
 	int a;
 	int b;
-	int res;
 
 	if (argc == 3)
 	{
