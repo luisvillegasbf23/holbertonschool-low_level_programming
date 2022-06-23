@@ -20,6 +20,6 @@ char *_strdup(char *str)
 		return (NULL);
 	for (i = 0; str[i]; i++)
 		copy[i] = str[i];
-	copy[i] = NULL;
+	copy[i] += 1;
 	return (copy);
 }
