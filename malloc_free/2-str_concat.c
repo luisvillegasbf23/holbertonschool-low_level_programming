@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 		concat[i] = s1[i];
 	for (j = 0; s2[j]; j++)
 	{
-		concat[j] = s2[j];
+		concat[i +j] = s2[j];
 	}
 	return (concat);
 }
