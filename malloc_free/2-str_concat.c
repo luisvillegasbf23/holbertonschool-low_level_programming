@@ -25,5 +25,6 @@ char *str_concat(char *s1, char *s2)
 	{
 		concat[i +j] = s2[j];
 	}
+	concat[i + j] = '\0';
 	return (concat);
 }
