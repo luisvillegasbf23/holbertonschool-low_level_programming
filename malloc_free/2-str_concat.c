@@ -8,8 +8,8 @@
 char *str_concat(char *s1, char *s2)
 {
 	int i, j;
-	char a = strlen(s1);
-	char b = strlen(s2);
+	int a = strlen(s1);
+	int b = strlen(s2);
 	char *concat;
 
 	if (s1 == NULL)
@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; s1[i]; i++)
 		concat[i] = s1[i];
 	for (j = 0; s2[j]; j++)
-		concat[i] = s2[j];
+		concat[i + j] = s2[j];
 	concat[i + j] = '\0';
 	return (concat);
 }
