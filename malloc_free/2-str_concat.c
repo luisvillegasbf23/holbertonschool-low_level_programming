@@ -8,10 +8,11 @@
 char *str_concat(char *s1, char *s2)
 {
 	int i, j = 0;
-	int a = strlen(s1);
-	int b = strlen(s2);
+	int a, b = 0;
 	char *concat = NULL;
 
+	a = strlen(s1);
+	b = strlen(s2);
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
