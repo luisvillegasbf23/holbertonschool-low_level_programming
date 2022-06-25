@@ -1,37 +1,28 @@
-#include "main.h"
 #include <stdlib.h>
 #include <string.h>
+#include "main.h"
+
 /**
- * string_nconcat - returned pointer shall point to a newly allocated
- * @s1: string 1
- * @s2: string 2
- * @n: size
- * Return: p
+ * array_range - creates an array of integrers
+ * @min: min
+ * @max: max
+ * Return: pointer to the newly created array
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+
+int *array_range(int min, int max)
 {
-	unsigned int j = 0, i = 0;
-	char *p = NULL;
+	int *p;
+	int size, i;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	if (n >= strlen(s2))
-		p = malloc(strlen(s1) + strlen(s2) + 1);
-	if (n < strlen(s2))
-		p = malloc(strlen(s1) + n + 1);
+	if (min > max)
+		return (NULL);
 
-	if (p != NULL)
-	{
-		for (i = 0; s1[i]; i++)
-			p[i] = s1[i];
-		for (j = 0; s2[j] && j < n; j++)
-			p[i++] = s2[j];
-		p[i] = 0;
+	size = max - min;
+	p = malloc((size + 1) * sizeof(int));
+	if (p == NULL)
+		return (NULL);
 
-	}
-	else
-		free(p);
+	for (i = 0; min <= max; i++, min++)
+		p[i] = min;
 	return (p);
 }
