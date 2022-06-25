@@ -1,28 +1,39 @@
 #include <stdlib.h>
 #include <string.h>
-#include "main.h"
 
 /**
- * array_range - creates an array of integrers
- * @min: min
- * @max: max
- * Return: pointer to the newly created array
+ * string_nconcat - concatenates two strings
+ * @s1: string 1
+ * @s2: string 2
+ * @n: first n bytes of s2
+ * Return: pointer or NULLL
  */
 
-int *array_range(int min, int max)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int *p;
-	int size, i;
+	char *p;
+	unsigned int size, i, j;
 
-	if (min > max)
-		return (NULL);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	if (n > strlen(s2))
+		n = strlen(s2);
 
-	size = max - min;
-	p = malloc((size + 1) * sizeof(int));
+	size = strlen(s1) + n;
+	p = malloc((size + 6) * sizeof(char));
 	if (p == NULL)
+	{
+		free(p);
 		return (NULL);
+	}
 
-	for (i = 0; min <= max; i++, min++)
-		p[i] = min;
+	for (i = 0; s1[i]; i++)
+		p[i] = s1[i];
+	for (j = 0; j < n; j++, i++)
+		p[i] = s2[j];
+	p[i] = '\0';
+
 	return (p);
 }
