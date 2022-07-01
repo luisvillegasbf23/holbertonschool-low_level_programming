@@ -1,7 +1,7 @@
 #include "variadic_functions.h"
 /**
  * print_strings - Write a function that prints strings,
- * followed by a new line. 
+ * followed by a new line.
  * @separator: pointer
  * @n: number of variables
  * Return: Void
@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 				printf("%s", s);
 			else
 				printf("(nil)");
-			if (i < n -1)
+			if (i < n - 1)
 				printf("%s", separator);
 		}
 		else
