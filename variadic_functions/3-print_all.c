@@ -7,10 +7,10 @@
 */
 void print_all(const char * const format, ...)
 {
-	unsigned i;
+	unsigned int i;
 	va_list par;
 
-	i= 0;
+	i = 0;
 	va_start(par, format);
 	while (format[i])
 	{
@@ -18,7 +18,6 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 					printf("%c", va_arg(par, int));
-					printf(", ");
 					break;
 			case 'i':
 					printf("%d", va_arg(par, int));
@@ -29,8 +28,10 @@ void print_all(const char * const format, ...)
 			case 's':
 					printf("%s", va_arg(par, char *));
 					break;
-			printf(", ");
 		}
+		if ((format[i] == 'f' || format[i] == 'i' ||
+			format[i] == 's' || format[i] == 'c') && format[i + 1] != '\0')
+			printf(", ");
 		i++;
 	}
 	printf("\n");
