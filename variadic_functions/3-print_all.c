@@ -8,6 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	unsigned int i;
+	char *s;
 	va_list par;
 
 	i = 0;
@@ -26,7 +27,11 @@ void print_all(const char * const format, ...)
 					printf("%f", va_arg(par, double));
 					break;
 			case 's':
-					printf("%s", va_arg(par, char *));
+					s = va_arg(par, char *);
+					if (s)
+						printf("%s", s);
+					else
+						printf("(nil)");
 					break;
 		}
 		if ((format[i] == 'f' || format[i] == 'i' ||
