@@ -28,10 +28,7 @@ void print_all(const char * const format, ...)
 					break;
 			case 's':
 					s = va_arg(par, char *);
-					if (s)
-						printf("%s", s);
-					else
-						printf("(nil)");
+					s ? printf("%s", s) : printf("(nil)");
 					break;
 		}
 		if ((format[i] == 'f' || format[i] == 'i' ||
