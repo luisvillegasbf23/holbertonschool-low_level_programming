@@ -24,9 +24,12 @@ list_t *add_node_end(list_t **head, const char *str)
 			*head = new_node;
 			return (0);
 		}
-		while (last->next)
-			last = last->next;
-		last->next = new_node;
+		else
+		{
+			while (last->next)
+				last = last->next;
+			last->next = new_node;
+		}
 	}
 	return (new_node);
 }
