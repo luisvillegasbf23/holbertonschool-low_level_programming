@@ -1,4 +1,5 @@
 #include "lists.h"
+#include "1-dlistint_len.c"
 /**
  * *insert_dnodeint_at_index - Write a function that inserts a new node
  * at a given position.
@@ -11,10 +12,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	unsigned int i = 0;
 	dlistint_t *new_node, *temp;
-	/*if (idx == 0)
-		return (NULL);
-	 if idx is  make a new node as head*/
-	if ((idx != 0 && *h == NULL))
+
+	if ((idx != 0 && *h == NULL) && idx > dlistint_len(*h))
 		return (NULL);
 	if (idx == 0)
 		return (add_dnodeint(h, n));
@@ -27,6 +26,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 				temp = temp->next;
 		}
 	}
+	/* allocate memomy and values to new_node */
 	new_node = malloc(sizeof(dlistint_t));
 	new_node->n = n;
 	new_node->next = NULL;
