@@ -21,7 +21,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			free(delete);
 			if (*head)
 				(*head)->prev = NULL;
-			return (1);
 		}
 		/* else, make a temp node and traverse to the node prev*/
 		else
