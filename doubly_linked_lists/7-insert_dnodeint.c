@@ -15,10 +15,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 
 	if ((idx != 0 && *h == NULL) && idx > dlistint_len(*h))
 		return (NULL);
+	/* if the position is 0, make new node as head*/
 	if (idx == 0)
 		return (add_dnodeint(h, n));
+	if (idx == dlistint_len(*h))
+		return (add_dnodeint_end(h, n));
 	/* make a temp node and traverse to the node previous to the idx*/
-	else {
+	else
+	{
 		temp = *h;
 		for (i = 0; i < idx - 1; i++)
 		{
