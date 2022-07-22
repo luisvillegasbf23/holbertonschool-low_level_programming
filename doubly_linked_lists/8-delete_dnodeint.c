@@ -14,6 +14,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (*head)
 	{
+		temp = *head;
 		/* if index is 1 make head next as head and delete prev head*/
 		if (index == 0)
 		{
@@ -25,7 +26,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		/* else, make a temp node and traverse to the node prev*/
 		else
 		{
-			temp = *head;
 			for (i = 0; i < index - 1; i++)
 				temp = temp->next;
 		}
