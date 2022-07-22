@@ -17,17 +17,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node->next = NULL;
 	new_node->prev = NULL;
 
-	if (idx == 0)
+	/*if (idx == 0)
 		return (NULL);
-	/* if idx is 1 make a new node as head*/
-	if (idx == 1)
+	 if idx is  make a new node as head*/
+	if (idx == 0)
 		return (add_dnodeint(h, n));
 	/* make a temp node and traverse to the node previous to the idx*/
-	temp = *h;
-	for (i = 0; i < idx - 1; i++)
-	{
-		if (temp)
-			temp = temp->next;
+	else {
+		temp = *h;
+		for (i = 0; i < idx - 1; i++)
+		{
+			if (temp)
+				temp = temp->next;
+		}
 	}
 	/* if the previous node is not null, adjust the links*/
 	if (temp)
