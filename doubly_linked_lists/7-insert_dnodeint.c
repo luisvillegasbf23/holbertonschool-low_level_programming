@@ -20,6 +20,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	/*if (idx == 0)
 		return (NULL);
 	 if idx is  make a new node as head*/
+	if ((idx != 0 && *h == NULL))
+		return (NULL);
 	if (idx == 0)
 		return (add_dnodeint(h, n));
 	/* make a temp node and traverse to the node previous to the idx*/
